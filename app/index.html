@@ -1,25 +1,61 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>WbRoutes</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Routes</title>
 
-    {{content-for 'head'}}
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
 
-    <link rel="stylesheet" href="assets/vendor.css">
-    <link rel="stylesheet" href="assets/wb-routes.css">
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
 
-    {{content-for 'head-footer'}}
   </head>
   <body>
-    {{content-for 'body'}}
+  <!--[if lt IE 10]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+  @@include('partials/header-nav.html', {
+    "theme": "theme-maroon"
+  })
+  <section class="section theme-maroon" data-0="transform:translate(0,0%);" data-100="transform:translate(0,-100%);" data-_paragraph-100p="" data-_paragraph-200p="transform:translate(0, -100%)">
+    <article class="article">
+      <h1 class="article-title">
+        mohamad ali of egypt
+      </h1>
+      <div class="article-content_holder">
+        <p class="article-content paragraph" data-100p="transform:translate(0,0%);" data-_paragraph-100p="transform:translate(0,-100%);">
+          The history of the Mediterranean Sea is full of odd constructions like 'present-day Greece' or 'Modern Egypt?' that are inadequate descriptions of life in this region centuries ago. It is difficult enough for the most mundane of stories, but it is nearly impossible to talk about Muhammad Ali, the OttomanAlbanian commander credited with fathering contemporary Egypt, using twenty-first century geography. After all, much of it exists because of him.
+          <br> <br>
+          In 1801, the 32-year-old was a local merchant who’d had some success fighting bandits outside his hometown of Kavala, located between Thessaloniki and Istanbul, when the governor recruited him for an Ottoman expedition to Egypt aimed at wresting control of the territory from Mamluk pashas. They had been in power since the departure of Napoleon’s French forces, three years after landing in Cairo in 1798. Muhammad Ali set sail with 299 other men on a journey of over a thousand kilometres.
+        </p>
+      </div>
+    </article>
+  </section>
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/skrollr/src/skrollr.js"></script>
+  <!--[if lt IE 9]>
+  <script type="text/javascript" src="/bower_components/skrollr-ie/src/skrollr.ie.min.js"></script>
+  <![endif]-->
+  <!-- endbower -->
+  <!-- endbuild -->
 
-    <script src="assets/vendor.js"></script>
-    <script src="assets/wb-routes.js"></script>
-
-    {{content-for 'body-footer'}}
-  </body>
+  <!-- build:js scripts/main.js -->
+  <script src="scripts/main.js"></script>
+  <script>
+    skrollr.init({
+      constants: {
+        paragraph: "150p"
+      }
+    })
+  </script>
+  <!-- endbuild -->
+</body>
 </html>

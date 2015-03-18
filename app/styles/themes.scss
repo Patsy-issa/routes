@@ -1,0 +1,14 @@
+// _themes.scss
+.theme-maroon {
+  @include background(url("../images/background-white.jpg"));
+  background-color: $color-maroon;
+  background-blend-mode: multiply;
+
+  @include selection(true) {
+    color: $color-maroon;
+    background-color: #fff;
+  }
+  &.fixed {
+    background-position: fixed;
+  }
+}
