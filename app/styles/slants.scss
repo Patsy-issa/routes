@@ -1,0 +1,30 @@
+// _slants.scss
+.slant-up {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  width: 100%;
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+    @include transform(skewY(-5deg));
+    @include transform-origin(100% 100%);
+    -webkit-backface-visibility: hidden;
+  }
+}
+.slant-blue {
+  &:after {
+    @include background(url("../images/background-white.jpg"));
+    background-color: $color-blue;
+    background-blend-mode: multiply;
+    outline: 1px solid transparent;
+  }
+}

@@ -1,16 +1,16 @@
-// // _base.scss
-// @font-face {
-//   font-family: 'Ubuntu';
-//   font-style: normal;
-//   font-weight: 400;
-//   src: local('Ubuntu'), url(http://fonts.gstatic.com/s/ubuntu/v7/vRvZYZlUaogOuHbBTT1SNevvDin1pK8aKteLpeZ5c0A.woff) format('woff');
-// }
-// @font-face {
-//   font-family: 'Ubuntu';
-//   font-style: normal;
-//   font-weight: 500;
-//   src: local('Ubuntu Medium'), local('Ubuntu-Medium'), url(http://fonts.gstatic.com/s/ubuntu/v7/OsJ2DjdpjqFRVUSto6IffLO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
-// }
+// _base.scss
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu'), url(http://fonts.gstatic.com/s/ubuntu/v7/vRvZYZlUaogOuHbBTT1SNevvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Ubuntu Medium'), local('Ubuntu-Medium'), url(http://fonts.gstatic.com/s/ubuntu/v7/OsJ2DjdpjqFRVUSto6IffLO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -35,4 +35,10 @@ body {
 .section {
   display: block;
   width:100%;
+  position: relative;
+  @include background(url("../images/background-white.jpg"));
+
+}
+.paragraph-black {
+  color: #000;
 }
