@@ -1,6 +1,6 @@
 // _article.scss
 .article {
-  padding: 15px 0px 45px 0px;
+  padding: 15px 0px 45px;
   position: relative;
   color: #fff;
   z-index: 2;
@@ -24,24 +24,43 @@
   padding: 0 15px;
 }
 .article-content_holder {
-  width:100%;
+  box-sizing: border-box;
   z-index: 2;
   position: relative;
-  padding: 0 15px;
+  padding: 15px;
   margin-bottom: 30px;
   p {
     font-size: 16px;
     line-height: 25px;
-    margin-bottom: 15px;
+  }
+  p:nth-child(2n+2) {
+    margin-top: 15px;
   }
 }
 .article-grey {
   background-color: $color-grey;
   opacity: 0.7;
-  padding: 15px;
 }
 .article-white {
   background-color: rgba(255, 255, 255, 0.7);
   opacity: 0.7;
-  padding: 15px;
+}
+@media (min-width: $bp-1) {
+  .article {
+    padding-bottom: 90px;
+    &:before {
+      left:58px;
+    }
+  }
+  .article-grey {
+    opacity: 0.8;
+  }
+  .article-title {
+    margin: 0px 30px 30px;
+    padding: 0px 30px;
+  }
+  .article-content_holder {
+    padding: 30px;
+    margin: 0 30px 30px;
+  }
 }

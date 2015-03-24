@@ -1,8 +1,11 @@
 // _ma.scss
+.container {
+  display: block;
+}
 .sea-slide-1 {
   width: 100%;
-  height: 610px;
   display: inline-block;
+  padding-bottom: 100px;
 
   .article-grey {
     margin-top: 100px;
@@ -11,7 +14,7 @@
 .kavala {
   width: 246px;
   height: 153px;
-  background-image: url('../images/kavala.png');
+  background-image: url('../images/320/kavala.png');
   background-repeat: no-repeat;
   position: absolute;
   right: 0;
@@ -19,9 +22,9 @@
   z-index: 2;
 }
 .black-triangles {
-  width: 320px;
+  width: 100%;
   height: calc(100% + 40px);
-  background-image: url('../images/black-triangles.png');
+  background-image: url('../images/320/black-triangles.png');
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -32,7 +35,7 @@
 .main-boat {
   width: 81px;
   height: 82px;
-  background-image: url('../images/main-boat.png');
+  background-image: url('../images/320/main-boat.png');
   background-repeat: no-repeat;
   position: absolute;
   z-index: 3;
@@ -42,7 +45,7 @@
 .boat-3 {
   width: 37px;
   height: 31px;
-  background-image: url('../images/boat-3.png');
+  background-image: url('../images/320/boat-3.png');
   background-repeat: no-repeat;
   position: absolute;
   top: 27px;
@@ -52,7 +55,7 @@
 .boat-12 {
   width: 66px;
   height: 50px;
-  background-image: url('../images/boat-12.png');
+  background-image: url('../images/320/boat-12.png');
   background-repeat: no-repeat;
   position: absolute;
   bottom: -25px;
@@ -81,9 +84,9 @@
   }
 }
 .white-triangles {
-  width: 320px;
-  height: 100%;
-  background-image: url('../images/white-triangles.png');
+  width: 100%;
+  height: 699px;
+  background-image: url('../images/320/white-triangles.png');
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -97,7 +100,7 @@
   position: absolute;
   bottom: -29px;
   right: 0;
-  background-image: url('../images/abukir.png');
+  background-image: url('../images/320/abukir.png');
   background-repeat: no-repeat;
   z-index: 2;
 }
@@ -111,7 +114,7 @@
   margin: 0 auto;
   height: 265px;
   overflow: hidden;
-  background-image: url('../images/warriors.png');
+  background-image: url('../images/320/warriors.png');
   background-repeat: no-repeat;
   background-position: 0 0; // animate to -265px
   position: absolute;
@@ -123,5 +126,73 @@
   display: inline-block;
   .article-white {
     margin-top: 140px;
+  }
+}
+
+@media (min-width: $bp-1) {
+  .kavala {
+    width: 287px;
+    height: 308px;
+    background-image: url('../images/760/kavala.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 30px;
+    top: -126px;
+    z-index: 2;
+  }
+
+  .sea-slide-1 .article-grey {
+    margin-top: 238px;
+  }
+
+  .black-triangles {
+    height: calc(100% + 70px);
+    top: -70px;
+    background-image: url('../images/760/black-triangles.png');
+  }
+
+  .main-boat {
+    width: 163px;
+    height: 166px;
+    background-image: url('../images/760/main-boat.png');
+    right: 60px;
+  }
+  .boat-3 {
+    width: 74px;
+    height: 62px;
+    background-image: url('../images/760/boat-3.png');
+  }
+  .boat-12 {
+    width: 136px;
+    height: 100px;
+    left: 108px;
+    bottom:10px;
+    background-image: url('../images/760/boat-12.png');
+  }
+  .abukir {
+    width: 80%;
+    height: 276px;
+    position: absolute;
+    bottom: -20%;
+    right: 30px;
+    background-image: url('../images/760/abukir.png');
+    background-size: 100% auto;
+    z-index: 2;
+  }
+  .white-triangles {
+    height: 615px;
+    background-image: url('../images/760/white-triangles.png');
+  }
+  .sea-slide-2 {
+    min-height: 750px;
+    padding-bottom: 100px;
+  }
+  .land-slide-2 {
+    padding-top: 100px;
+  }
+  .ma-warriors {
+    width: 90%;
+    background-image: url('../images/760/warriors.png');
+    background-size: 100% auto;
   }
 }

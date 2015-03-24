@@ -28,3 +28,9 @@
     outline: 1px solid transparent;
   }
 }
+
+@media (min-width: $bp-1) {
+  .slant-up:after {
+    @include transform(skewY(-3.2deg));
+  }
+}
