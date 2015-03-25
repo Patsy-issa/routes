@@ -64,3 +64,23 @@
     margin: 0 30px 30px;
   }
 }
+
+@media (min-width: $bp-2) {
+  .article {
+    padding-top: 138px;
+    &:before {
+      position: absolute;
+      top: 90px;
+      left: 75px;
+      font-size:30px;
+      letter-spacing: 1px;
+    }
+  }
+  .article-title {
+    margin: 0px 45px 45px;
+  }
+  .article-content_holder {
+    max-width: 610px;
+    margin: 0 45px 45px;
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "patsyissa-routes",
+  "root": "./dist",
+  "clean_urls": true
+}

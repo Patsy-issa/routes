@@ -42,3 +42,14 @@ body {
 .paragraph-black {
   color: #000;
 }
+.visible-desktop {
+  display: none;
+}
+@media (min-width: $bp-2) {
+  .hidden-desktop {
+    display: none;
+  }
+  .visible-desktop {
+    display: inline-block;
+  }
+}
