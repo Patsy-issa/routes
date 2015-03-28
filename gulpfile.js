@@ -6,6 +6,7 @@ var $ = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
 var notify = require('gulp-notify');
 var reload = browserSync.reload;
+var htmlClean = require('gulp-htmlclean');
 
 gulp.task('styles', function () {
   return gulp.src('app/styles/main.scss')
@@ -41,7 +42,9 @@ gulp.task('html', ['fileinclude', 'styles'], function () {
     .pipe(assets.restore())
     .pipe($.useref())
     .pipe($.if('.tmp/*.html', $.minifyHtml({conditionals: true, loose: true})))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('./dist'))
+    .pipe($.if('./dist/*.html', htmlClean({})))
+    .pipe(gulp.dest('./dist'))
 });
 
 gulp.task('images', function () {
@@ -126,7 +129,7 @@ gulp.task('fileinclude', function() {
     .pipe(gulp.dest('.tmp/'));
 });
 
-gulp.task('build', ['jshint', 'html', 'images', 'fonts', 'extras'], function () {
+gulp.task('build', ['clean', 'jshint', 'html', 'images', 'fonts', 'extras'], function () {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 

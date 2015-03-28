@@ -34,3 +34,9 @@
     @include transform(skewY(-3.2deg));
   }
 }
+
+@media (min-width: $bp-2) {
+  .slant-up {
+    height: 90px;
+  }
+}
