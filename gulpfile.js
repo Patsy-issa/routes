@@ -129,7 +129,7 @@ gulp.task('fileinclude', function() {
     .pipe(gulp.dest('.tmp/'));
 });
 
-gulp.task('build', ['clean', 'jshint', 'html', 'images', 'fonts', 'extras'], function () {
+gulp.task('build', ['jshint', 'html', 'images', 'fonts', 'extras'], function () {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 

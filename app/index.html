@@ -8,6 +8,7 @@
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/mapbox.js/mapbox.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -48,7 +49,7 @@
     <div class="article-content_holder article-grey visible-desktop">
       <div class="article-content">
         <p>
-          The history of the Mediterranean Sea is full of odd constructions like “present-day Greece” or “Modern Egypt” that are inadequate descriptions of life in this region centuries ago. It is difficult enough for the most mundane of stories, but it is nearly impossible to talk about Muhammad Ali, the Ottoman Albanian commander credited with fathering contemporary Egypt, using twenty-first-century geography. After all, much of it exists because of him.
+          The history of the Mediterranean Sea is full of odd constructions like "present-day Greece" or "Modern Egypt" that are inadequate descriptions of life in this region centuries ago. It is difficult enough for the most mundane of stories, but it is nearly impossible to talk about Muhammad Ali, the Ottoman Albanian commander credited with fathering contemporary Egypt, using twenty-first-century geography. After all, much of it exists because of him.
         </p>
         <p>
           In 1801, the 32-year-old was a local merchant who’d had some success fighting bandits outside his hometown of Kavala, located between Thessaloniki and Istanbul, when the governor recruited him for an Ottoman expedition to Egypt aimed at wresting control of the territory from Mamluk pashas. They had been in power since the departure of Napoleon’s French forces, three years after landing in Cairo in 1798. Muhammad Ali set sail with 299 other men on a journey of over a thousand kilometres.
@@ -134,7 +135,7 @@
   <section class="section theme-fixed ma-last">
     <div class="article-content_holder article-white visible-desktop">
       <p>
-        Muhammad Ali was power hungry and saw his Egypt as the centre of the world. While this meant inviting foreigners in to do business, it also meant that Arabic speakers were at a disadvantage during his reign and that his warmongering killed thousands. Syria, Crete and Sudan turned to face a man known in Turkish as “Mohammed Ali from Kavala.” It was in Kavala that Muhammad Ali learned to trust people by their skills, not by their mother tongue – hence his comfort with French, Greek, Turkish and Armenian speakers coming to Egypt en masse and creating communities there.
+        Muhammad Ali was power hungry and saw his Egypt as the centre of the world. While this meant inviting foreigners in to do business, it also meant that Arabic speakers were at a disadvantage during his reign and that his warmongering killed thousands. Syria, Crete and Sudan turned to face a man known in Turkish as "Mohammed Ali from Kavala." It was in Kavala that Muhammad Ali learned to trust people by their skills, not by their mother tongue – hence his comfort with French, Greek, Turkish and Armenian speakers coming to Egypt en masse and creating communities there.
       </p>
       <p>
         But just as modernising inadequately describes the nineteenth century Middle East, so Europeanising may attribute to Muhammad Ali something he never set out to do. His goal was not to ape Europe, no matter how much some Europeans wish that were true. Instead, Muhammad Ali may have been drawing on the best parts of his Rumelian heritage: French schooling, a polyglot bureaucracy and a multiconfessional ministry. The goal was not to modernise or Europeanise Egypt, but rather to Balkanise.
@@ -162,17 +163,30 @@
     </div>
   </section>
 
-  <div class="map-container"></div>
+  <div id="map"></div>
 
   <!-- build:js scripts/vendor.js -->
   <!-- bower:js -->
   <script src="/bower_components/jquery/dist/jquery.js"></script>
-  <script src="/bower_components/skrollr/src/skrollr.js"></script>
+  <script src="/bower_components/mapbox.js/mapbox.js"></script>
+  <script src="/bower_components/protonet/jquery.inview/jquery.inview.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
   <!-- build:js scripts/main.js -->
+  <script src="scripts/ma.js"></script>
   <script src="scripts/main.js"></script>
+  <script src="scripts/map.js"></script>
   <!-- endbuild -->
+
+  <script>
+    var map = new geoMap();
+    map.$map = $('#map');
+    map.accessToken = 'pk.eyJ1Ijoia25vb3pyb29tIiwiYSI6Ims1RWhpM0EifQ.tu8ILYm_dap3ZACv38w3nA';
+    map.mapRef = 'knoozroom.b01da933';
+    map.geoJson = passages;
+    map.markerIcon = '../images/map/boat-kavala.png';
+    map.setMap();
+  </script>
 </body>
 </html>
