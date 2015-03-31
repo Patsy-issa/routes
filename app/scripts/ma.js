@@ -1,12 +1,14 @@
+/* global passages */
+'use strict';
 var passages = {
-  "type": "FeatureCollection",
-  "features": [
+  'type': 'FeatureCollection',
+  'features': [
     {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
+      'type': 'Feature',
+      'properties': {},
+      'geometry': {
+        'type': 'LineString',
+        'coordinates': [
           [
             24.409217834472653,
             40.934654261458064

@@ -2,7 +2,7 @@
   "name": "routes",
   "private": true,
   "dependencies": {
-    "jquery": "~2.1.1",
+    "jquery": "~1.10.0",
     "bourbon": "~4.2.1",
     "mapbox.js": "~2.1.6",
     "protonet/jquery.inview": "~1.0.0"

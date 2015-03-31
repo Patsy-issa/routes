@@ -167,25 +167,25 @@
 
   <!-- build:js scripts/vendor.js -->
   <!-- bower:js -->
-  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/jquery/jquery.js"></script>
   <script src="/bower_components/mapbox.js/mapbox.js"></script>
-  <script src="/bower_components/protonet/jquery.inview/jquery.inview.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
   <!-- build:js scripts/main.js -->
-  <script src="scripts/ma.js"></script>
+  <script src="/bower_components/protonet/jquery.inview/jquery.inview.js"></script>
   <script src="scripts/main.js"></script>
+  <script src="scripts/ma.js"></script>
   <script src="scripts/map.js"></script>
   <!-- endbuild -->
 
-  <script>
+  <script defer>
     var map = new geoMap();
     map.$map = $('#map');
+    map.geoJson = passages;
     map.accessToken = 'pk.eyJ1Ijoia25vb3pyb29tIiwiYSI6Ims1RWhpM0EifQ.tu8ILYm_dap3ZACv38w3nA';
     map.mapRef = 'knoozroom.b01da933';
-    map.geoJson = passages;
-    map.markerIcon = '../images/map/boat-kavala.png';
+    map.markerIcon = 'images/map/boat-kavala.png';
     map.setMap();
   </script>
 </body>

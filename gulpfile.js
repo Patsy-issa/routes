@@ -129,10 +129,10 @@ gulp.task('fileinclude', function() {
     .pipe(gulp.dest('.tmp/'));
 });
 
-gulp.task('build', ['jshint', 'html', 'images', 'fonts', 'extras'], function () {
+gulp.task('b', ['html', 'images', 'fonts', 'extras'], function () {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
 gulp.task('default', ['clean'], function () {
-  gulp.start('build');
+  gulp.start('b');
 });
