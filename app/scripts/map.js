@@ -1,5 +1,6 @@
 /* global L */
 (function(L){
+  "use strict";
   window.geoMap = geoMap;
   function geoMap() {
     /*jshint validthis: true */

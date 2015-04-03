@@ -24,6 +24,9 @@
   @@include('partials/header-nav.html', {
     "theme": "theme-maroon"
   })
+  <div id="menu">
+    @@include('partials/menu.html')
+  </div>
   <section class="section theme-maroon first-slide">
     <article class="article">
       <h1 class="article-title">
@@ -163,8 +166,11 @@
     </div>
   </section>
 
-  <div id="map"></div>
-
+  <div id="map">
+    <div class="map-text_container">
+      <p></p>
+    </div>
+  </div>
   @@include('partials/credits.html', {
     "name": "Asher Kohn",
     "bio": "Asher writes about land use and disuse, as well as the people and things who turn it from one to the other lorem lipsum lorem lipsum Asher writes about land use and disuse, as well as the people and things who turn it from one to the other lorem lipsum lorem lipsum."
