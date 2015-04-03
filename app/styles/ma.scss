@@ -13,6 +13,7 @@
 }
 .first-slide {
   padding: 0;
+  padding-top: 40px;
 }
 .kavala {
   width: 246px;
@@ -133,6 +134,9 @@
 }
 
 @media (min-width: $bp-1) {
+  .first-slide {
+    padding-top: 60px;
+  }
   .kavala {
     width: 287px;
     height: 308px;
@@ -202,6 +206,9 @@
 }
 
 @media (min-width: $bp-2) {
+  .first-slide {
+    padding-top: 80px;
+  }
   .sea-slide-1 {
     height:500px;
 
@@ -209,7 +216,6 @@
       position: absolute;
       top: -150px;
       height: calc(100% + 190px);
-      overflow-y: scroll;
     }
   }
   .first-slide {
@@ -258,7 +264,6 @@
     .article-content_holder {
       position: relative;
       top: 30px;
-      overflow-y: scroll;
     }
     .rain {
       width:100%;
@@ -284,7 +289,6 @@
     .article-content_holder  {
       position: relative;
       top: -30px;
-      overflow-y: scroll;
       opacity: 1;
     }
   }
