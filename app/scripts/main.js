@@ -13,6 +13,7 @@
   $creditsWrapper = $('.credits-wrapper'),
   $map = $('#map'),
   ticked = false,
+  $mapText = $('.map-text_container'),
   resizeTimeout,
   s;
 
@@ -24,6 +25,7 @@
 
     var map = new window.geoMap;
     map.$map = $map;
+    map.$mapText = $mapText;
     map.geoJson = passages;
     map.accessToken = 'pk.eyJ1Ijoia25vb3pyb29tIiwiYSI6Ims1RWhpM0EifQ.tu8ILYm_dap3ZACv38w3nA';
     map.mapRef = 'knoozroom.b01da933';
