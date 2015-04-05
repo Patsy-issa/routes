@@ -125,6 +125,9 @@
   right:0;
   left:0;
   z-index: 3;
+  &.ma-warriors_toggle {
+    background-image: url('../images/320/warriors-2.png');
+  }
 }
 .ma-last {
   display: inline-block;
@@ -199,6 +202,9 @@
     width:701px;
     height:610px;
     background-image: url('../images/760/warriors-1.png');
+    &.ma-warriors_toggle {
+      background-image: url('../images/760/warriors-2.png');
+    }
   }
   .ma-last .article-white {
     margin-top: 300px;
@@ -300,6 +306,9 @@
     left: 530px;
     bottom: -57px;
     margin:0;
+    &.ma-warriors_toggle {
+    background-image: url('../images/1200/warriors-2.png');
+    }
   }
   .white-triangles {
     height: 943px;

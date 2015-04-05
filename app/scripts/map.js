@@ -26,11 +26,6 @@
     this.marker.setIcon(L.icon({iconUrl: this.markerIcon,  "iconSize": [100, 43]}));
     this.disableActions();
     this.setMapMarker();
-    this.$map.bind('inview', function(event, isInView, visiblePartX, visiblePartY) {
-      if(isInView && visiblePartY === "both") {
-        this.tick();
-      }
-    }.bind(this));
   };
 
   geoMap.prototype.disableActions = function () {

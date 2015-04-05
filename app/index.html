@@ -44,7 +44,7 @@
   <section class="section theme-blue theme-fixed sea-slide-1">
     <div class="black-triangles"></div>
     <div class="kavala"></div>
-    <div class="main-boat"></div>
+    <div class="main-boat" data-0="transform:translateY(0px);" data-350="transform:translateY(300px);"></div>
     <div class="boat-3"></div>
     <div class="boat-12"></div>
     <div class="article-content_holder article-grey visible-desktop">
@@ -169,34 +169,20 @@
       <p></p>
     </div>
   </div>
-  @@include('partials/credits.html', {
-    "name": "Asher Kohn",
-    "bio": "Asher writes about land use and disuse, as well as the people and things who turn it from one to the other lorem lipsum lorem lipsum Asher writes about land use and disuse, as well as the people and things who turn it from one to the other lorem lipsum lorem lipsum."
-  })
-  @@include('partials/menu.html')
+  <div class="credits-buffer"></div>
 
   <!-- build:js scripts/vendor.js -->
   <!-- bower:js -->
   <script src="/bower_components/jquery/jquery.js"></script>
   <script src="/bower_components/mapbox.js/mapbox.js"></script>
+  <script src="/bower_components/skrollr/src/skrollr.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
   <!-- build:js scripts/main.js -->
-  <script src="/bower_components/protonet/jquery.inview/jquery.inview.js"></script>
   <script src="scripts/main.js"></script>
   <script src="scripts/ma.js"></script>
   <script src="scripts/map.js"></script>
   <!-- endbuild -->
-
-  <script defer>
-    var map = new geoMap();
-    map.$map = $('#map');
-    map.geoJson = passages;
-    map.accessToken = 'pk.eyJ1Ijoia25vb3pyb29tIiwiYSI6Ims1RWhpM0EifQ.tu8ILYm_dap3ZACv38w3nA';
-    map.mapRef = 'knoozroom.b01da933';
-    map.markerIcon = 'images/map/boat-kavala.png';
-    map.setMap();
-  </script>
 </body>
 </html>

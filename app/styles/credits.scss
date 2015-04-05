@@ -5,6 +5,11 @@
   padding:40px;
   background-color: #fff;
 }
+.credits-wrapper {
+  position: absolute;
+  height:0;
+  @include transition(top 0.4s linear, height 0.4s linear);
+}
 .credits-author {
   width:575px;
   margin-right: 30px;
