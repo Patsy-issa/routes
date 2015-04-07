@@ -1,0 +1,41 @@
+// _map-popup.scss
+
+.map-popup {
+  position: absolute;
+  width: 100%;
+  height:0;
+  overflow: hidden;
+  background-color: rgba( 0, 0, 0, 0.8);
+  z-index: 9;
+  opacity:0;
+  @include transition(opacity 0.6s linear, z-index 0.6s linear);
+  &.shown {
+    opacity:1;
+    z-index: 10;
+    overflow-y: scroll;
+    height: 100%;
+  }
+
+  img {
+    display: block;
+    left:0;
+    right:0;
+    top: 0;
+    margin:0 auto;
+    max-width: 80%;
+    max-height: 100%;
+  }
+}
+
+.map-popup_close {
+  width: 25px;
+  height: 25px;
+  background-image: url('../images/close.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: absolute;
+  top:15px;
+  right:15px;
+  cursor: pointer;
+  overflow: hidden;
+}

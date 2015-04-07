@@ -8,13 +8,23 @@
   $html = $('html'),
   $nav = $('.header-nav'),
   $window = $(window),
-  $table = $('.crete-table'),
+  $table = $('.crete-table.visible-desktop'),
   $warriors = $('.ma-warriors'),
   $creditsWrapper = $('.credits-wrapper'),
   $map = $('#map'),
   ticked = false,
   $mapText = $('.map-text_container'),
+  $mainBoat = $('.main-boat'),
+  $abukir = $('.abukir'),
+  $mapPopup = $('.map-popup'),
+  $popupImage = $mapPopup.find('img'),
+  $landSlide = $('.land-slide-2'),
+  $seaSlide = $('.sea-slide-1'),
+  $headerMapBtn = $('.header-nav__map-btn'),
   resizeTimeout,
+  mapPopupTimeout,
+  addClassTimeout,
+  delta,
   s;
 
   $(function() {
@@ -32,24 +42,50 @@
     map.markerIcon = 'images/map/boat-kavala.png';
     map.setMap();
     $window.on('scroll', function() {
-      if (isElementInViewport($('#map')) && !ticked) {
+      if (isElementInViewport($map) && !ticked) {
         map.tick();
         ticked = true;
       };
-      headerCheck();
+      clearTimeout(mapPopupTimeout);
+      mapPopupTimeout = setTimeout(toggleMapPopup, 100);
+      // headerCheck();
+    });
+
+    $window.on('resize', function() {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(adjustWindow, 100);
     });
   });
 
-  $window.on('resize', function() {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(adjustWindow, 100);
-  });
+  function toggleMapPopup() {
+    var winTop = $window.scrollTop();
+    var oldSrc = $popupImage.prop('src');
+    if (winTop < ($seaSlide.offset().top + 150)) {
+      $popupImage.prop('src', 'images/ma/map-position-1.jpg');
+    } else if (winTop > $landSlide.offset().top - 150) {
+      $popupImage.prop('src', 'images/ma/map-position-3.jpg');
+    } else {
+      $popupImage.prop('src', 'images/ma/map-position-2.jpg');
+    }
+    if (oldSrc !== $popupImage.prop('src')) {
+      $headerMapBtn.removeClass('bounce');
+      clearTimeout(addClassTimeout);
+      addClassTimeout = setTimeout(function() {
+        $headerMapBtn.addClass('bounce');
+      }, 100);
+    }
+  }
 
   function adjustWindow() {
     var winWidth = $window.width();
     // Init Skrollr for 768 and up
     if( winWidth >= 800) {
       s = skrollr.init({
+        constants: {
+          mainBoat: $mainBoat.offset().top,
+          table: $table.offset().top,
+          abukir: $abukir.offset().top
+        },
         smoothScrolling: true,
         smoothScrollingDuration: 500
       });
@@ -62,6 +98,22 @@
     $menu.toggleClass('menu_open').css('top', $window.scrollTop());
     $body.toggleClass('no-scroll');
   });
+
+  $doc.on('click', '.header-nav__map-btn', function() {
+    $mapPopup.addClass('shown').css('top', $window.scrollTop());
+    $body.addClass('no-scroll');
+  });
+  $doc.on('click', '.map-popup_close', hideMapPopup);
+  $doc.on('click', '.map-popup:not(img)', function(ev) {
+    if (ev.target.className === "map-popup shown") {
+      hideMapPopup();
+    }
+  });
+
+  function hideMapPopup() {
+    $mapPopup.removeClass('shown');
+    $body.removeClass('no-scroll');
+  }
 
   var lastScrollTop = 0;
 

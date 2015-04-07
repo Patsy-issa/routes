@@ -9,9 +9,6 @@
   vertical-align: middle;
   @include transition(transform .2s ease-out);
   @include transform(translateY(-100%));
-  @include background(url("../images/background-white.jpg"));
-  background-color: $color-maroon;
-  background-blend-mode: multiply;
   z-index: 8;
 }
 .header-nav_is-shown {
@@ -29,6 +26,9 @@
   @include background(url("../images/map.svg"));
   background-repeat: no-repeat;
   cursor: pointer;
+  &.bounce {
+    @include animation(bounce 2s 1);
+  }
 }
 .header-nav__menu-btn {
   float: right;
@@ -57,5 +57,17 @@
   }
   .header-nav__menu-btn {
     margin-left: 30px;
+  }
+}
+
+@include keyframes(bounce) {
+  0%, 20%, 50%, 80%, 100% {
+    @include transform(translateY(0));
+  }
+  40% {
+    @include transform(translateY(30px));
+  }
+  60% {
+    @include transform(translateY(15px));
   }
 }

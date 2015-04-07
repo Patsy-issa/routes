@@ -240,6 +240,16 @@
     background-image: url('../images/1200/black-triangles.png');
   }
 
+  .abukir-boat {
+    width:173px;
+    height:177px;
+    background-image: url('../images/1200/main-boat.png');
+    position: absolute;
+    right:230px;
+    top: -90px;
+    z-index: 3;
+  }
+
   .main-boat {
     width:173px;
     height:177px;
@@ -284,6 +294,7 @@
     width:506px;
     height:182px;
     background-image: url('../images/1200/abukir.png');
+    z-index: 4;
   }
   .sea-slide-2 {
     display: flex;
