@@ -1,7 +1,6 @@
 // _themes.scss
 .theme-maroon {
-  background-color: $color-maroon;
-  background-blend-mode: multiply;
+  background-image: url('../images/background-maroon.jpg');
   color: #fff;
 
   @include selection(true) {
@@ -10,8 +9,7 @@
   }
 }
 .theme-blue {
-  background-color: $color-blue;
-  background-blend-mode: multiply;
+  background-image: url('../images/background-blue.jpg');
 }
 .theme-fixed {
   background-attachment: fixed;

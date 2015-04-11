@@ -1,7 +1,6 @@
 /* global L */
 (function(L){
   "use strict";
-  window.geoMap = geoMap;
   function geoMap() {
     /*jshint validthis: true */
     this.target = document.getElementById('map');
@@ -14,6 +13,7 @@
     this.marker = null;
     this.markerIcon = null;
     this.ticker = 0;
+    this.limitReached = false;
   }
 
   geoMap.prototype.setMap = function() {
@@ -91,12 +91,21 @@
         case 85:
           this.marker.setIcon(L.icon({iconUrl: 'images/map/dot.png',  "iconSize": [14, 14]}));
           this.$mapText.html("<div><p> Six years later, he would decimate the remaining Mamluks, conquer Cairo and turn 42. Muhammad Ali decided that the traditional title of wali would not be enough for him. He instead chose to be called khedive, from the Persian khoda, or lord (or more dramatically: god) and lead a Turkish-speaking army to victory over the Caucasus Mamelukes, who were then (barely) ruling an Arabic Egypt.</p></div>");
-
+          this.limitReached = true;
+          setTimeout(this.endMap.bind(this), 3000);
           break;
       }
-      setTimeout(function() {
-        this.tick();
-      }.bind(this), 300);
+      if (!this.limitReached) {
+        setTimeout(function() {
+          this.tick();
+        }.bind(this), 300);
+      }
     }
   };
+
+  geoMap.prototype.endMap = function() {
+    this.$mapOverlay.fadeIn();
+    this.ticker = 0;
+  };
+  window.geoMap = geoMap;
 }(L));

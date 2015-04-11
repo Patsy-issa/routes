@@ -131,7 +131,7 @@
 }
 .ma-last {
   display: inline-block;
-  .article-white {
+  .article-content_holder {
     margin-top: 140px;
   }
 }
@@ -152,7 +152,7 @@
     z-index: 2;
   }
 
-  .sea-slide-1 .article-grey {
+  .sea-slide-1 .article-content_holder {
     margin-top: 0;
   }
 
@@ -206,7 +206,7 @@
       background-image: url('../images/760/warriors-2.png');
     }
   }
-  .ma-last .article-white {
+  .ma-last .article-content_holder {
     margin-top: 300px;
   }
 }
@@ -214,6 +214,7 @@
 @media (min-width: $bp-2) {
   .first-slide {
     padding-top: 80px;
+    padding-bottom: 50px;
   }
   .sea-slide-1 {
     height:500px;
@@ -223,9 +224,6 @@
       top: -150px;
       height: calc(100% + 190px);
     }
-  }
-  .first-slide {
-    padding-bottom: 50px;
   }
   .kavala {
     width: 364px;
@@ -328,7 +326,6 @@
   .ma-last {
     .article-content_holder {
       position: relative;
-      top: -30px;
       margin-top:0;
       z-index: 4;
       opacity: 1;

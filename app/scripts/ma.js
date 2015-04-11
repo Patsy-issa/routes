@@ -1,6 +1,5 @@
-/* global passages */
 'use strict';
-var passages = {
+window.passages = {
   'type': 'FeatureCollection',
   'features': [
     {

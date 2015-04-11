@@ -5,15 +5,15 @@
   color: #fff;
   z-index: 2;
 
-  &:before {
-    content: "...";
-    color: inherit;
-    position: absolute;
-    top: -17px;
-    left: 16.5px;
-    font-size:30px;
-    letter-spacing: 1px;
-  }
+  // &:before {
+  //   content: "...";
+  //   color: inherit;
+  //   position: absolute;
+  //   top: -17px;
+  //   left: 16.5px;
+  //   font-size:30px;
+  //   letter-spacing: 1px;
+  // }
 }
 .article-title {
   text-transform: uppercase;
@@ -29,7 +29,11 @@
   position: relative;
   padding: 15px;
   margin-bottom: 30px;
+  .article-paragraph_black {
+    color: #000;
+  }
   p {
+    color: #fff;
     font-size: 16px;
     line-height: 25px;
   }
@@ -37,23 +41,12 @@
     margin-bottom: 15px;
   }
 }
-.article-grey {
-  background-color: $color-grey;
-  opacity: 0.7;
-}
-.article-white {
-  background-color: rgba(255, 255, 255, 0.7);
-  opacity: 0.7;
-}
 @media (min-width: $bp-1) {
   .article {
     padding-bottom: 90px;
-    &:before {
-      left:58px;
-    }
-  }
-  .article-grey {
-    opacity: 0.8;
+    // &:before {
+    //   left:58px;
+    // }
   }
   .article-title {
     margin: 0px 30px 30px;
@@ -68,13 +61,13 @@
 @media (min-width: $bp-2) {
   .article {
     padding-top: 138px;
-    &:before {
-      position: absolute;
-      top: 90px;
-      left: 75px;
-      font-size:30px;
-      letter-spacing: 1px;
-    }
+    // &:before {
+    //   position: absolute;
+    //   top: 90px;
+    //   left: 75px;
+    //   font-size:30px;
+    //   letter-spacing: 1px;
+    // }
   }
   .article-title {
     margin: 0px 45px 45px;

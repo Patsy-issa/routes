@@ -46,9 +46,6 @@ body {
   position: relative;
   @include background(url("../images/background-white.jpg"));
 }
-.paragraph-black {
-  color: #000;
-}
 .visible-desktop {
   display: none !important;
 }

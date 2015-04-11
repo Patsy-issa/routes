@@ -25,4 +25,28 @@
       line-height: 24px;
     }
   }
+  .map-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 7;
+    display: flex;
+    align-items: center;
+    cursor: default;
+  }
+  .map-btn {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -150px;
+    margin-left: -150px;
+    background-image: url('../images/map/white-play-button.png');
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
 }
